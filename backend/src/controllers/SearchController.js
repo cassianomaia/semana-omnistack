@@ -12,6 +12,7 @@ module.exports = {
                 $in: techsArray,
             },
         });
+
         return response.json({ devs });
     }
 
