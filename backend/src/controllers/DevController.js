@@ -41,4 +41,6 @@ module.exports = {
         
         return response.json(dev);
     }
+
+    //TODO: update destroy
 };
