@@ -68,10 +68,8 @@ module.exports = {
     },
 
     async destroy(request, response){
-        try{
-            var result = await Dev.deleteOne({ github_username: request.params.github_username }).exec();
-        } catch (error) {
-            response.status(500).send(error);
-        }
+        const { github_username } = request.body;
+        let dev = await Dev.findOneAndDelete({ github_username});
+        return response.json(dev);
     }
 };
