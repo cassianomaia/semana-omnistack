@@ -8475,6 +8475,13 @@ react-app-polyfill@^1.0.5:
     regenerator-runtime "^0.13.3"
     whatwg-fetch "^3.0.0"
 
+react-class@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-class/-/react-class-2.1.0.tgz#0a7adf1c1951f4d9bf2a4da7c23c2bc77566c642"
+  integrity sha1-CnrfHBlR9Nm/Kk2nwjwrx3VmxkI=
+  dependencies:
+    object-assign "^4.0.1"
+
 react-dev-utils@^10.0.0:
   version "10.0.0"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-10.0.0.tgz#bd2d16426c7e4cbfed1b46fb9e2ac98ec06fcdfa"
@@ -8519,6 +8526,14 @@ react-error-overlay@^6.0.4:
   version "6.0.4"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.4.tgz#0d165d6d27488e660bc08e57bdabaad741366f7a"
   integrity sha512-ueZzLmHltszTshDMwyfELDq8zOA803wQ1ZuzCccXa1m57k1PxSHfflPD5W9YIiTXLs0JTLzoj6o1LuM5N6zzNA==
+
+react-flex@^2.2.8:
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/react-flex/-/react-flex-2.2.8.tgz#39d73ebf209818d479a5278af745ae9dbbc73828"
+  integrity sha1-Odc+vyCYGNR5pSeK90WunbvHOCg=
+  dependencies:
+    object-assign "^4.0.1"
+    react-class "^2.0.0"
 
 react-is@^16.8.1, react-is@^16.8.4:
   version "16.12.0"

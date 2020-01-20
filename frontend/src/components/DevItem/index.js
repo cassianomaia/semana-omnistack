@@ -2,7 +2,7 @@ import React from 'react';
 
 import './styles.css';
 
-function DevItem({dev, deleteDev}){
+function DevItem({ dev }){
     return (
         <li className="dev-item">
             <header>
@@ -11,12 +11,6 @@ function DevItem({dev, deleteDev}){
                     <strong>{dev.name}</strong>
                     <span>{dev.techs.join(', ')}</span>
                 </div>
-                <span
-                    className="dev-item-delete"
-                    onClick={()=> deleteDev(dev.github_username)}
-                >
-                    *
-                </span>
             </header>
             <p>{dev.bio}</p>
             <a href={`https://github.com/${dev.github_username}`}>

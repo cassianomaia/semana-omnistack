@@ -7,8 +7,8 @@ import './App.css';
 import './Sidebar.css';
 import './Main.css';
 
-import DevForm from './components/DevForm';
 import DevItem from './components/DevItem';
+import DevForm from './components/DevForm';
 
 function App() {
   const [devs, setDevs] = useState([]);
@@ -34,18 +34,8 @@ function App() {
     }
   }
 
-  async function handleRemoveDev(username) {
-    const response = await api.delete(`/devs/${username}`);
-
-    if(response.status === 204){
-      const newDevs = devs.filter(dev => dev.github_username !== username);
-
-      setDevs(newDevs);
-    }
-  }
-
   return (
-    <div className="App">
+    <div id="app">
       <aside>
         <strong>Cadastrar</strong>
         <DevForm onSubmit={handleAddDev} />
@@ -54,7 +44,7 @@ function App() {
         {devs.length > 0 ? (
           <ul>
             {devs.map(dev => (
-              <DevItem key={dev._id} dev={dev} deleteDev={handleRemoveDev} />
+              <DevItem key={dev._id} dev={dev} />
             ))}
           </ul>
         ) : (
