@@ -26,4 +26,4 @@ function DevItem({dev, deleteDev}){
     );
 }
 
-export default ;
+export default DevItem;

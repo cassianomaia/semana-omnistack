@@ -8,7 +8,7 @@ module.exports = {
 
     async index(request, response) {
         const devs = await Dev.find();
-
+	console.log("Looking for devs");
         return response.json(devs);
     },
 

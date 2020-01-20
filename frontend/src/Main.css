@@ -1,16 +1,16 @@
-main{
+main {
     flex: 1;
-}
-
-main ul{
+  }
+  
+  main ul {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     list-style: none;
-}
-
-@media (max-width: 650px){
-    main ul{
-        grid-template-columns: 1fr;
+  }
+  
+  @media (max-width: 650px) {
+    main ul {
+      grid-template-columns: 1fr;
     }
-}
+  }
