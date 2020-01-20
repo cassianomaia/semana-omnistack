@@ -8,7 +8,6 @@ module.exports = {
 
     async index(request, response) {
         const devs = await Dev.find();
-	console.log("Looking for devs");
         return response.json(devs);
     },
 
@@ -40,7 +39,42 @@ module.exports = {
         }
         
         return response.json(dev);
-    }
+    },
 
-    //TODO: update destroy
+    async update (request, response){
+        const { github_username, techs, latitude, longitude } = request.body;
+
+        const apiResponse =  await axios.get(`https://api.github.com/users/${github_username}`);
+
+        const { name = login, avatar_url, bio } = apiResponse.data;
+
+        const techsArray = parsetStringAsArray(techs);
+            
+        const location = {
+            type: 'Point',
+            coordinates: [longitude, latitude],
+        }
+
+        let dev = await Dev.findOneAndUpdate({ github_username }, {
+            github_username,
+            name,
+            avatar_url,
+            bio,
+            techs: techsArray,
+            location,
+        });
+
+        return response.json(dev);
+    },
+
+    async destroy(request, response){
+        const { github_username } = request.body;
+        
+        await Dev.deleteOne({ github_username: github_username}, (err) => {
+            if(err){
+                return response.status(204);
+            }
+            return response.status(200);
+        });
+    }
 };
