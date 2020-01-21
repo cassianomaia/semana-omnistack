@@ -2,7 +2,7 @@ import React from 'react';
 
 import './styles.css';
 
-function DevItem({ dev, deleteDev }){
+function DevItem({ dev, deleteDev, editDev }){
     return (
         <li className="dev-item">
             <header>
@@ -19,7 +19,7 @@ function DevItem({ dev, deleteDev }){
                     Acessar perfil no Github
                 </a>
                 <span> | </span>
-                <button>
+                <button onClick={() => editDev(dev.github_username)}>
                     Editar
                 </button>
             </footer>
