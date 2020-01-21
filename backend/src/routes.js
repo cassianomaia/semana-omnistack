@@ -6,6 +6,7 @@ const SearchController = require('./controllers/SearchController');
 const routes = Router();
 
 routes.get('/devs', DevController.index);
+routes.get('/devs/:github_username', DevController.show);
 routes.post('/devs', DevController.store);
 routes.put('/devs', DevController.update);
 routes.delete('/devs', DevController.destroy);

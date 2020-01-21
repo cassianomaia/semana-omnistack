@@ -11,6 +11,12 @@ module.exports = {
         return response.json(devs);
     },
 
+    async show(request, response) {
+        const { github_username } = request.params;
+        let dev = await Dev.findOne({ github_username });
+        return response.json(dev);
+    },
+
     async store (request, response) {
         const { github_username, techs, latitude, longitude } = request.body;
 
@@ -69,7 +75,7 @@ module.exports = {
 
     async destroy(request, response){
         const { github_username } = request.body;
-        let dev = await Dev.findOneAndDelete({ github_username});
+        let dev = await Dev.findOneAndDelete({ github_username });
         return response.json(dev);
     }
 };

@@ -7,5 +7,5 @@ Repositório utilizado para armazenar os códigos realizados na semana Omnistack
 - [ ] (Frontend) Delete
 - [x] (Backend)  Delete
 - [ ] (Frontend) Update
-- [ ] (Backend)  Update
+- [x] (Backend)  Update
 - [ ] (Mobile)   Interface nativa
