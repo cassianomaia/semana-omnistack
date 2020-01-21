@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+ backend:
+  build: ./backend
+  expose:
+   - ${APP_SERVER_PORT}
+  environment:
+   API_HOST: ${API_HOST}
+   APP_SERVER_PORT: ${APP_SERVER_PORT}
+  ports:
+   - ${APP_SERVER_PORT}:${APP_SERVER_PORT}
+  volumes:
+   - ./backend/src:/srv/app/backend/src
+  command: yarn dev
+
+ frontend:
+  build: ./frontend
+  environment:
+   - REACT_APP_PORT=${REACT_APP_PORT}
+  expose:
+   - ${REACT_APP_PORT}
+  ports:
+   - ${REACT_APP_PORT}:${REACT_APP_PORT}
+  volumes:
+   - ./frontend/src:/srv/app/frontend/src
+   - ./frontend/public:/srv/app/frontend/public
+  links:
+   - backend
+  command: yarn start
