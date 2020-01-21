@@ -16,6 +16,16 @@ li.dev-item {
     height: 54px;
     border-radius: 50%;
 }
+
+  li.dev-item header button {
+    color: #7d40e7;;
+    border: none;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: transparent;;
+    background-repeat: no-repeat;
+    margin-left: auto;
+}
   
   li.dev-item header .user-info {
     margin-left: 10px;

@@ -9,7 +9,7 @@ routes.get('/devs', DevController.index);
 routes.get('/devs/:github_username', DevController.show);
 routes.post('/devs', DevController.store);
 routes.put('/devs', DevController.update);
-routes.delete('/devs', DevController.destroy);
+routes.delete('/devs/:github_username', DevController.destroy);
 
 routes.get('/search', SearchController.index);
 

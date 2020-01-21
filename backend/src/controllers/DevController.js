@@ -74,7 +74,7 @@ module.exports = {
     },
 
     async destroy(request, response){
-        const { github_username } = request.body;
+        const { github_username } = request.params;
         let dev = await Dev.findOneAndDelete({ github_username });
         return response.json(dev);
     }
