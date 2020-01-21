@@ -19,9 +19,9 @@ function DevItem({ dev, deleteDev }){
                     Acessar perfil no Github
                 </a>
                 <span> | </span>
-                <a href={`http://localhost:3000`}>
+                <button>
                     Editar
-                </a>
+                </button>
             </footer>
         </li>
     );

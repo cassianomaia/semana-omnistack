@@ -26,6 +26,10 @@ li.dev-item {
     background-repeat: no-repeat;
     margin-left: auto;
 }
+
+li.dev-item header button:hover {
+  color: #5a2ca6;
+}
   
   li.dev-item header .user-info {
     margin-left: 10px;
@@ -62,10 +66,23 @@ li.dev-item {
     padding: 1px;
     margin: 1px;
 }
-li.dev-item footer span{
-  color : #5a2ca6;
+li.dev-item footer button{
+  color : #8e4dff;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: transparent;;
+  background-repeat: no-repeat;
 }
-  
+
+li.dev-item footer button:hover{
+  color: #5a2ca6;
+}
+
+li.dev-item footer span{
+  color: #5a2ca6;
+}
+
   li.dev-item footer a:hover {
     color: #5a2ca6;
 }
