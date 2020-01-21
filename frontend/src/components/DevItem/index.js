@@ -14,9 +14,15 @@ function DevItem({ dev, deleteDev }){
                 <button onClick={() => deleteDev(dev.github_username)}>X</button>
             </header>
             <p>{dev.bio}</p>
-            <a href={`https://github.com/${dev.github_username}`}>
-                Acessar perfil no Github
-            </a>
+            <footer>
+                <a href={`https://github.com/${dev.github_username}`}>
+                    Acessar perfil no Github
+                </a>
+                <span> | </span>
+                <a href={`http://localhost:3000`}>
+                    Editar
+                </a>
+            </footer>
         </li>
     );
 }

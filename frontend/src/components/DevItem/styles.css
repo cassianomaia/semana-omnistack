@@ -49,13 +49,23 @@ li.dev-item {
     line-height: 20px;
     margin: 10px 0;
 }
-  
-  li.dev-item a {
+  li.dev-item footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  li.dev-item footer a {
     color: #8e4dff;
     font-size: 14px;
     text-decoration: none;
+    padding: 1px;
+    margin: 1px;
+}
+li.dev-item footer span{
+  color : #5a2ca6;
 }
   
-  li.dev-item a:hover {
+  li.dev-item footer a:hover {
     color: #5a2ca6;
 }
