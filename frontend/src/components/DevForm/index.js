@@ -2,7 +2,7 @@ import React, {useState, useEffect } from 'react';
 
 import './styles.css';
 
-function DevForm({ onSubmit }){
+function DevForm({ onSubmit , devToEdit }){
     const [github_username, setGithubUsername] = useState('');
     const [techs, setTechs] = useState('');
     const [latitude, setLatitude] = useState('');
@@ -46,7 +46,7 @@ function DevForm({ onSubmit }){
                 <input
                     name="github_username"
                     id="github_username"
-                    value={github_username}
+                    value={devToEdit.github_username}
                     onChange={e => setGithubUsername(e.target.value)}
                     required
                 />

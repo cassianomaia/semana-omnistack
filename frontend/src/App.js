@@ -12,7 +12,7 @@ import DevForm from './components/DevForm';
 
 function App() {
   const [devs, setDevs] = useState([]);
-  const [devEdit, setDevEdit] = useState([]);
+  const [devEdit, setDevEdit] = useState({});
 
   useEffect(() =>{
     async function loadDevs() {
@@ -21,6 +21,7 @@ function App() {
     }    
 
     loadDevs();
+    setDevEdit({});
   }, []);
 
   async function handleAddDev(devData) {
@@ -32,7 +33,10 @@ function App() {
 
     if (devIndex === -1) {
       setDevs([...devs, newDev]);
+      setDevEdit({});
+      console.log(devEdit);
     }
+
   }
 
   async function handleDeleteDev(devGithubUsername) {
@@ -43,14 +47,16 @@ function App() {
   }
 
   async function handleEditDev(devGithubUsername) {
-    setDevEdit(devs.filter(dev => dev.github_username === devGithubUsername));;
+    let dev  = devs.find(dev => dev.github_username === devGithubUsername);
+    setDevEdit(dev);
+    console.log(devEdit);
   }
 
   return (
     <div id="app">
       <aside>
         <strong>Cadastrar</strong>
-        <DevForm onSubmit={handleAddDev}/>
+        <DevForm onSubmit={handleAddDev} devToEdit={devEdit}/>
       </aside>
       <main>
         {devs.length > 0 ? (
