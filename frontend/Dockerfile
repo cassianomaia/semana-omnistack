@@ -1,10 +1,10 @@
-FROM node:8.7.0-alpine
+FROM node:10
 
 RUN mkdir -p /srv/app/frontend
 WORKDIR /srv/app/frontend
 
 COPY package.json /srv/app/frontend
-COPY package-lock.json /srv/app/frontend
+COPY yarn.lock /srv/app/frontend
 
 RUN yarn install
 
