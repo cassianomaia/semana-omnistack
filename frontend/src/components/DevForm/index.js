@@ -46,7 +46,7 @@ function DevForm({ onSubmit , devToEdit }){
                 <input
                     name="github_username"
                     id="github_username"
-                    value={devToEdit ? devToEdit.github_username : github_username}
+                    value={github_username}
                     onChange={e => setGithubUsername(e.target.value)}
                     required
                 />
@@ -70,7 +70,7 @@ function DevForm({ onSubmit , devToEdit }){
                         name="latitude"
                         id="latitude"
                         type="number"
-                        value={devToEdit ? devToEdit.latitude : latitude}
+                        value={latitude}
                         onChange={e => setLatitude(e.target.value)}
                         required
                     />
@@ -82,7 +82,7 @@ function DevForm({ onSubmit , devToEdit }){
                         name="longitude"
                         id="longitude"
                         type="number"
-                        value={devToEdit ? devToEdit.longitude : longitude}
+                        value={longitude}
                         onChange={e => setLongitude(e.target.value)}
                         required
                     />
