@@ -19,7 +19,7 @@ function DevItem({ dev, deleteDev, editDev }){
                     Acessar perfil no Github
                 </a>
                 <span> | </span>
-                <button onClick={() => editDev(dev.github_username)}>
+                <button onClick={() => editDev(dev)}>
                     Editar
                 </button>
             </footer>

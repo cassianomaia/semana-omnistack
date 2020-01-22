@@ -36,7 +36,6 @@ function App() {
       setDevEdit({});
       console.log(devEdit);
     }
-
   }
 
   async function handleDeleteDev(devGithubUsername) {
@@ -46,9 +45,8 @@ function App() {
     setDevs(newDevs);
   }
 
-  async function handleEditDev(devGithubUsername) {
-    let dev  = devs.find(dev => dev.github_username === devGithubUsername);
-    setDevEdit(dev);
+  async function handleEditDev(devObject) {
+    setDevEdit(devObject);
     console.log(devEdit);
   }
 

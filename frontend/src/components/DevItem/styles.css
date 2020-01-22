@@ -25,6 +25,7 @@ li.dev-item {
     background-color: transparent;;
     background-repeat: no-repeat;
     margin-left: auto;
+    text-decoration: none;
 }
 
 li.dev-item header button:hover {
@@ -68,6 +69,10 @@ li.dev-item header button:hover {
 }
 li.dev-item footer button{
   color : #8e4dff;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 1px;
+  margin: 1px;
   border: none;
   overflow: hidden;
   cursor: pointer;
@@ -81,6 +86,10 @@ li.dev-item footer button:hover{
 
 li.dev-item footer span{
   color: #5a2ca6;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 1px;
+  margin: 1px;
 }
 
   li.dev-item footer a:hover {
