@@ -25,16 +25,19 @@ function App() {
   }, []);
 
   async function handleAddDev(devData) {
-    const { data: newDev } = await api.post('/devs', devData);
-
+    const { data: newDev, status } = await api.post('/devs', devData);
+    
     const devIndex = devs.findIndex(
       dev => dev.github_username === newDev.github_username
     );
 
     if (devIndex === -1) {
       setDevs([...devs, newDev]);
-      setDevEdit({});
-      console.log(devEdit);
+    }else if(status === 200){
+      const{ data: updatedDev } = await api.put('/devs', devData);
+      devs.splice(devIndex, 1);
+      setDevs([...devs, updatedDev]);
+
     }
   }
 
