@@ -22,13 +22,12 @@ function DevForm({ onSubmit , devToEdit }){
             {
                 timeout: 30000
             }
-            
         );
     }, []);
 
     async function handleSubmit(e){
         e.preventDefault();
-
+        
         await onSubmit({
             github_username,
             techs,
