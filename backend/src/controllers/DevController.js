@@ -8,7 +8,7 @@ module.exports = {
 
     async index(request, response) {
         const devs = await Dev.find();
-        return response.json(devs);
+        return response.status(200).json(devs);
     },
 
     async show(request, response) {
@@ -72,15 +72,21 @@ module.exports = {
             techs: techsArray,
             location,
         });
+
+        const statusCode = dev ? 200 : 404;
         
-        let updatedDev = await Dev.findOne({ github_username });
-        return response.json(updatedDev);
+        if(statusCode === 200){
+            let updatedDev = await Dev.findOne({ github_username });
+            return response.status(statusCode).json(updatedDev);
+        }else{
+            return response.status(statusCode);
+        }
     },
 
     async destroy(request, response){
         const { github_username } = request.params;
         const dev = await Dev.findOneAndDelete({ github_username });
-        const statusCode = dev ? 204 : 404;
+        const statusCode = dev ? 200 : 404;
         return response.status(statusCode).json(dev);
     }
 };

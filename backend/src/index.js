@@ -8,7 +8,8 @@ const app = express();
 // Comandos utilizados para conectar ao mongodb atlas
 mongoose.connect('mongodb+srv://admin:admin@clustertest-8mhpl.mongodb.net/test?retryWrites=true&w=majority',{
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true
 });
 
 // Comandos utilizados para conectar a um mongodb local
