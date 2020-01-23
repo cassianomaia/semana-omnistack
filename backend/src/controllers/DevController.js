@@ -72,8 +72,9 @@ module.exports = {
             techs: techsArray,
             location,
         });
-
-        return response.json(dev);
+        
+        let updatedDev = await Dev.findOne({ github_username });
+        return response.json(updatedDev);
     },
 
     async destroy(request, response){
