@@ -43,7 +43,7 @@ function App() {
   }
 
   async function handleDeleteDev(devGithubUsername) {
-    const response = await api.delete(`/devs/${devGithubUsername}`);
+    await api.delete(`/devs/${devGithubUsername}`);
 
     const newDevs = devs.filter(dev => dev.github_username !== devGithubUsername);
     setDevs(newDevs);
