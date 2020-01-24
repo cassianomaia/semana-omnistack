@@ -53,7 +53,7 @@ function DevForm({ onSubmit }){
                     required
                 />
             </div>
-
+            
             <div className="input-block">
                 <label htmlFor="techs">Tecnologias</label>
                 <input
