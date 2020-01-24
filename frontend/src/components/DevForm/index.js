@@ -49,7 +49,7 @@ function DevForm({ onSubmit }){
                     name="github_username"
                     id="github_username"
                     value={github_username}
-                    onChange={e => setGithubUsername(e.target.value)}
+                    onChange={e => {setGithubUsername(e.target.value); console.log(github_username)}}
                     required
                 />
             </div>
