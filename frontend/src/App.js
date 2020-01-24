@@ -9,20 +9,17 @@ import './Main.css';
 
 import DevItem from './components/DevItem';
 import DevForm from './components/DevForm';
+import { EditDevProvider } from './context/EditDevContext';
 
 function App() {
   const [devs, setDevs] = useState([]);
-  const [devEdit, setDevEdit] = useState({});
-
 
   useEffect(() =>{
     async function loadDevs() {
-      const response = await api.get('/devs');
+      const response = await api.get('/devs') ;
       setDevs(response.data);
     }    
-
     loadDevs();
-    setDevEdit({});
   }, []);
 
   async function handleAddDev(devData) {
@@ -38,7 +35,6 @@ function App() {
       const{ data: updatedDev } = await api.put('/devs', devData);
       devs.splice(devIndex, 1);
       setDevs([...devs, updatedDev]);
-
     }
   }
 
@@ -49,29 +45,26 @@ function App() {
     setDevs(newDevs);
   }
 
-  async function handleEditDev(devObject) {
-    setDevEdit(devObject);
-    console.log(devEdit);
-  }
-
   return (
-    <div id="app">
-      <aside>
-        <strong>Cadastrar</strong>
-        <DevForm onSubmit={handleAddDev} devToEdit={devEdit}/>
-      </aside>
-      <main>
-        {devs.length > 0 ? (
-          <ul>
-            {devs.map(dev => (
-              <DevItem key={dev._id} dev={dev} deleteDev={handleDeleteDev} editDev={handleEditDev} />
-            ))}
-          </ul>
-        ) : (
-          <p>Nenhum desenvolvedor cadastrado.</p>
-        )}
-      </main>
-    </div>
+    <EditDevProvider>
+      <div id="app">
+        <aside>
+          <strong>Cadastrar</strong> 
+          <DevForm onSubmit={handleAddDev}/>
+        </aside>
+        <main>
+          {devs.length > 0 ? (
+            <ul>
+              {devs.map(dev => (
+                <DevItem key={dev._id} dev={dev} deleteDev={handleDeleteDev}/>
+              ))}
+            </ul>
+          ) : (
+            <p>Nenhum desenvolvedor cadastrado.</p>
+          )}
+        </main>
+      </div>
+    </EditDevProvider>
   );
 }
 

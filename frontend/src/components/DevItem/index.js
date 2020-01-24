@@ -1,8 +1,9 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
+import { EditDevContext } from '../../context/EditDevContext';
 import './styles.css';
 
-function DevItem({ dev, deleteDev, editDev }){
+function DevItem({ dev, deleteDev }){
+    const [editDev, setEditDev] = useContext(EditDevContext);
     return (
         <li className="dev-item">
             <header>
@@ -19,7 +20,7 @@ function DevItem({ dev, deleteDev, editDev }){
                     Acessar perfil no Github
                 </a>
                 <span> | </span>
-                <button onClick={() => editDev(dev)}>
+                <button onClick={setEditDev(dev.github_username)}>
                     Editar
                 </button>
             </footer>

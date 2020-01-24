@@ -1,8 +1,11 @@
-import React, {useState, useEffect } from 'react';
+import React, {useState, useEffect, useContext } from 'react';
+import { EditDevContext } from '../../context/EditDevContext';
 
 import './styles.css';
 
-function DevForm({ onSubmit , devToEdit }){
+function DevForm({ onSubmit }){
+    const [editDev,setEditDev] = useContext(EditDevContext);
+
     const [github_username, setGithubUsername] = useState('');
     const [techs, setTechs] = useState('');
     const [latitude, setLatitude] = useState('');
@@ -34,7 +37,6 @@ function DevForm({ onSubmit , devToEdit }){
             latitude,
             longitude
         });
-
         setGithubUsername('');
         setTechs('');
     }
